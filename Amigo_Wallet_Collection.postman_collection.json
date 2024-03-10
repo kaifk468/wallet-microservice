@@ -1,0 +1,856 @@
+{
+	"info": {
+		"_postman_id": "c91220ff-de0f-46e0-ab1f-dacfbf8871e2",
+		"name": "Amigo_Wallet_Collection",
+		"description": "# ⛓️ Get started here\n\nPostman allows you to test your APIs using simple Javascript code. You can evaluate your response body, headers, cookies, and more using the [ChaiJS BDD](https://www.chaijs.com/api/bdd/) syntax.\n\nThis template guides you through the process of setting up an integration test to ensure that all individual components of an API function together seamlessly.\n\nThe API under test in this collection includes three endpoints for registering and receiving a token, accessing your unique generated name, and unregistering a token:\n\n- POST `/register`\n- POST `/unregister`\n- GET `/my-name`\n    \n\nBy setting up requests in the order of the operation, we can test the flow of data to and from the endpoints and ensure they work together as expected. We also verify that the data persists between requests on the back end.\n\n## 🔖 **How to use this template**\n\n**Step 1:** Check out the requests' documentation to learn more about -\n\n- what each request is meant to do.\n- the tests we've added against each one.\n    \n\n**Step 2:** Run this collection by clicking on \"Run\".\n\n<img src=\"https://content.pstmn.io/84019b0f-69c8-4c5f-98b9-2c90a6f9a0b1/Y29sbGVjdGlvbi1ydW5uZXItYnV0dG9uLmpwZWc=\" alt=\"\" height=\"103\" width=\"266\">\n\n**Step 3:** To customize this template, replace the request URLs with your API endpoints and add or edit the tests if needed.\n\n## ℹ️ Resources\n\n[Scripting in Postman](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/)\n\n[Test script examples](https://learning.postman.com/docs/writing-scripts/script-references/test-examples/)\n\n[Postman Sandbox API reference](https://learning.postman.com/docs/sending-requests/grpc/postman-sandbox-api/#writing-assertions)\n\n[Using the Collection Runner](https://learning.postman.com/docs/collections/running-collections/intro-to-collection-runs/)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30273221"
+	},
+	"item": [
+		{
+			"name": "BankApi",
+			"item": [
+				{
+					"name": "AddMoney",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImthaWZrNDY4QGdtYWlsLmNvbSIsInN1YiI6ImthaWYgU2lkZGlxdWUiLCJpYXQiOjE3MDkyMjg5MDgsImV4cCI6MTcwOTIzMDcwOH0.HDKl_c7Yr1U8hpHI-827d3RL3m-qV5plp1Rz9AcI7AM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"request\":  {\r\n        \"accountNumber\": \"012345678901234\",\r\n        \"ifscCode\": \"COMMON\",\r\n        \"amount\": 1000.00,\r\n        \"password\": \"Password@1234\",\r\n        \"transactionType\": \"CREDIT\"\r\n        }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiGateBaseUrl}}/common-bank/money/credit",
+							"host": [
+								"{{apiGateBaseUrl}}"
+							],
+							"path": [
+								"common-bank",
+								"money",
+								"credit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DebitMoney",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "RegisterOnIdentity",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"zaid Siddique\",\r\n    \"email\":\"kaifk468@gmail.com\",\r\n    \"password\":\"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiGateBaseUrl}}/auth/register",
+							"host": [
+								"{{apiGateBaseUrl}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RegisterOnIdentity Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"zaid Siddique\",\r\n    \"email\":\"kaifk468@gmail.com\",\r\n    \"password\":\"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiGateBaseUrl}}/auth/register",
+							"host": [
+								"{{apiGateBaseUrl}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RegisterOnIdentity Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"zaid Siddique\",\r\n    \"email\":\"kaifk468@gmail.com\",\r\n    \"password\":\"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiGateBaseUrl}}/auth/register",
+							"host": [
+								"{{apiGateBaseUrl}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"kaif Siddique\",\r\n    \"password\":\"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiGateBaseUrl}}/auth/token",
+							"host": [
+								"{{apiGateBaseUrl}}"
+							],
+							"path": [
+								"auth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ValidateToken",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "DeleteOffer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImthaWZrNDY4QGdtYWlsLmNvbSIsInN1YiI6ImthaWYgU2lkZGlxdWUiLCJpYXQiOjE3MDkyMzI3MDIsImV4cCI6MTcwOTQxMjcwMn0.klpjT-9Ivp_nbUcZnHm6lBdZK_1L72v9_BBqLJZkRHQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1,\r\n    \"cashBackPercentage\":20,\r\n    \"maxCashBack\":100,\r\n    \"minTrxReq\":500,\r\n    \"serviceTypeId\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiGateBaseUrl}}/amigo-wallet/offer/create",
+							"host": [
+								"{{apiGateBaseUrl}}"
+							],
+							"path": [
+								"amigo-wallet",
+								"offer",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateOffer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImthaWZrNDY4QGdtYWlsLmNvbSIsInN1YiI6ImthaWYgU2lkZGlxdWUiLCJpYXQiOjE3MDkyMzI3MDIsImV4cCI6MTcwOTQxMjcwMn0.klpjT-9Ivp_nbUcZnHm6lBdZK_1L72v9_BBqLJZkRHQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":1,\r\n    \"cashBackPercentage\":20,\r\n    \"maxCashBack\":100,\r\n    \"minTrxReq\":500,\r\n    \"serviceTypeId\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiGateBaseUrl}}/amigo-wallet/offer/create",
+							"host": [
+								"{{apiGateBaseUrl}}"
+							],
+							"path": [
+								"amigo-wallet",
+								"offer",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MapOffer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImthaWZrNDY4QGdtYWlsLmNvbSIsInN1YiI6ImthaWYgU2lkZGlxdWUiLCJpYXQiOjE3MDkyMzI3MDIsImV4cCI6MTcwOTQxMjcwMn0.klpjT-9Ivp_nbUcZnHm6lBdZK_1L72v9_BBqLJZkRHQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiGateBaseUrl}}/amigo-wallet/offer/map?offerId=1&userId=1",
+							"host": [
+								"{{apiGateBaseUrl}}"
+							],
+							"path": [
+								"amigo-wallet",
+								"offer",
+								"map"
+							],
+							"query": [
+								{
+									"key": "offerId",
+									"value": "1"
+								},
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "RegisterUser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"An access token is returned\", () => {",
+									"    pm.expect(pm.response.json()).to.have.property('token')",
+									"    pm.expect(pm.response.json().token).to.be.a('string')",
+									"    // Set the collection-scope \"token\" variable to the token received from the API",
+									"    // This lets us use it in other requests",
+									"    pm.collectionVariables.set('token', pm.response.json().token)",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"userId\": 1,\r\n \"emailId\": \"user@example.com\",\r\n \"mobileNumber\": \"1234567890\",\r\n \"name\": \"John Doe\",\r\n \"password\": \"Password#123\",\r\n \"balance\": 1000.00,\r\n \"successMessage\": \"User created successfully\",\r\n \"errorMessage\": \"\",\r\n \"rewardPoints\": 100,\r\n \"securityQuestionDto\": {\r\n    \"questionId\": 1,\r\n    \"question\": \"What is your mother's maiden name?\"\r\n },\r\n \"securityAnswer\": \"Answer123\",\r\n \"newPassword\": \"newPassword#123\",\r\n \"confirmNewPassword\": \"newPassword#123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiGateBaseUrl}}/user-service/registration/register",
+							"host": [
+								"{{apiGateBaseUrl}}"
+							],
+							"path": [
+								"user-service",
+								"registration",
+								"register"
+							]
+						},
+						"description": "This returns a `token` that you can use to retrieve information later on.\n\nWe have included a test to confirm if a token is returned. We have also added test scripts to copy the token to the `token` collection variable. This makes it easy for us to reuse this token in other requests in the collection."
+					},
+					"response": []
+				},
+				{
+					"name": "UserLogin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"An access token is returned\", () => {",
+									"    pm.expect(pm.response.json()).to.have.property('token')",
+									"    pm.expect(pm.response.json().token).to.be.a('string')",
+									"    // Set the collection-scope \"token\" variable to the token received from the API",
+									"    // This lets us use it in other requests",
+									"    pm.collectionVariables.set('token', pm.response.json().token)",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImthaWZrNDY4QGdtYWlsLmNvbSIsInN1YiI6ImthaWYgU2lkZGlxdWUiLCJpYXQiOjE3MDkyMzI3MDIsImV4cCI6MTcwOTQxMjcwMn0.klpjT-9Ivp_nbUcZnHm6lBdZK_1L72v9_BBqLJZkRHQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"emailId\":\"example@example.com\",\r\n    \"password\":\"Password#1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiGateBaseUrl}}/amigo-wallet/user-login/authenticate",
+							"host": [
+								"{{apiGateBaseUrl}}"
+							],
+							"path": [
+								"amigo-wallet",
+								"user-login",
+								"authenticate"
+							]
+						},
+						"description": "This returns a `token` that you can use to retrieve information later on.\n\nWe have included a test to confirm if a token is returned. We have also added test scripts to copy the token to the `token` collection variable. This makes it easy for us to reuse this token in other requests in the collection."
+					},
+					"response": []
+				},
+				{
+					"name": "RedeemPoints",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"An access token is returned\", () => {",
+									"    pm.expect(pm.response.json()).to.have.property('token')",
+									"    pm.expect(pm.response.json().token).to.be.a('string')",
+									"    // Set the collection-scope \"token\" variable to the token received from the API",
+									"    // This lets us use it in other requests",
+									"    pm.collectionVariables.set('token', pm.response.json().token)",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImthaWZrNDY4QGdtYWlsLmNvbSIsInN1YiI6ImthaWYgU2lkZGlxdWUiLCJpYXQiOjE3MDkyMzI3MDIsImV4cCI6MTcwOTQxMjcwMn0.klpjT-9Ivp_nbUcZnHm6lBdZK_1L72v9_BBqLJZkRHQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiGateBaseUrl}}/amigo-wallet/reward-point/redeem-points",
+							"host": [
+								"{{apiGateBaseUrl}}"
+							],
+							"path": [
+								"amigo-wallet",
+								"reward-point",
+								"redeem-points"
+							]
+						},
+						"description": "This returns a `token` that you can use to retrieve information later on.\n\nWe have included a test to confirm if a token is returned. We have also added test scripts to copy the token to the `token` collection variable. This makes it easy for us to reuse this token in other requests in the collection."
+					},
+					"response": []
+				},
+				{
+					"name": "AddMoneyToWallet",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"An access token is returned\", () => {",
+									"    pm.expect(pm.response.json()).to.have.property('token')",
+									"    pm.expect(pm.response.json().token).to.be.a('string')",
+									"    // Set the collection-scope \"token\" variable to the token received from the API",
+									"    // This lets us use it in other requests",
+									"    pm.collectionVariables.set('token', pm.response.json().token)",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"accountNumber\":\"012345678901234\",\r\n        \"amount\":\"500\",\r\n        \"password\":\"Password@1234\",\r\n        \"transactionType\":\"DEBIT\",\r\n        \"ifscCode\":\"COMMON\",\r\n        \"userId\":\"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/DebitCardAPI/loadMoneyFromBank",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"DebitCardAPI",
+								"loadMoneyFromBank"
+							]
+						},
+						"description": "This returns a `token` that you can use to retrieve information later on.\n\nWe have included a test to confirm if a token is returned. We have also added test scripts to copy the token to the `token` collection variable. This makes it easy for us to reuse this token in other requests in the collection."
+					},
+					"response": []
+				},
+				{
+					"name": "TransferMoneyToBank",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"An access token is returned\", () => {",
+									"    pm.expect(pm.response.json()).to.have.property('token')",
+									"    pm.expect(pm.response.json().token).to.be.a('string')",
+									"    // Set the collection-scope \"token\" variable to the token received from the API",
+									"    // This lets us use it in other requests",
+									"    pm.collectionVariables.set('token', pm.response.json().token)",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":1,\r\n    \"accountNumber\":\"012345678901234\",\r\n    \"ifscCode\":\"COMMON\",\r\n    \"amount\":500.0,\r\n    \"password\":\"Password#1234\",\r\n    \"transactionType\":\"CREDIT\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiGateBaseUrl}}/user-service/bank/send-money-bank",
+							"host": [
+								"{{apiGateBaseUrl}}"
+							],
+							"path": [
+								"user-service",
+								"bank",
+								"send-money-bank"
+							]
+						},
+						"description": "This returns a `token` that you can use to retrieve information later on.\n\nWe have included a test to confirm if a token is returned. We have also added test scripts to copy the token to the `token` collection variable. This makes it easy for us to reuse this token in other requests in the collection."
+					},
+					"response": []
+				},
+				{
+					"name": "MerchantsBasedOnTypes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"An access token is returned\", () => {",
+									"    pm.expect(pm.response.json()).to.have.property('token')",
+									"    pm.expect(pm.response.json().token).to.be.a('string')",
+									"    // Set the collection-scope \"token\" variable to the token received from the API",
+									"    // This lets us use it in other requests",
+									"    pm.collectionVariables.set('token', pm.response.json().token)",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "HardWare",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/WalletToMerchantTransferAPI/merchantType",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"WalletToMerchantTransferAPI",
+								"merchantType"
+							]
+						},
+						"description": "This returns a `token` that you can use to retrieve information later on.\n\nWe have included a test to confirm if a token is returned. We have also added test scripts to copy the token to the `token` collection variable. This makes it easy for us to reuse this token in other requests in the collection."
+					},
+					"response": []
+				},
+				{
+					"name": "ServiceType",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"An access token is returned\", () => {",
+									"    pm.expect(pm.response.json()).to.have.property('token')",
+									"    pm.expect(pm.response.json().token).to.be.a('string')",
+									"    // Set the collection-scope \"token\" variable to the token received from the API",
+									"    // This lets us use it in other requests",
+									"    pm.collectionVariables.set('token', pm.response.json().token)",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "HardWare",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/WalletToMerchantTransferAPI/merchantType",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"WalletToMerchantTransferAPI",
+								"merchantType"
+							]
+						},
+						"description": "This returns a `token` that you can use to retrieve information later on.\n\nWe have included a test to confirm if a token is returned. We have also added test scripts to copy the token to the `token` collection variable. This makes it easy for us to reuse this token in other requests in the collection."
+					},
+					"response": []
+				},
+				{
+					"name": "WalletToWalletTransfer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"An access token is returned\", () => {",
+									"    pm.expect(pm.response.json()).to.have.property('token')",
+									"    pm.expect(pm.response.json().token).to.be.a('string')",
+									"    // Set the collection-scope \"token\" variable to the token received from the API",
+									"    // This lets us use it in other requests",
+									"    pm.collectionVariables.set('token', pm.response.json().token)",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImthaWZrNDY4QGdtYWlsLmNvbSIsInN1YiI6ImthaWYgU2lkZGlxdWUiLCJpYXQiOjE3MDk0NDk3NjMsImV4cCI6MTcwOTYyOTc2M30.Y5MOfX4A9Sty2GsoGmRYBUS_w4iNvJLTBO89vZ8drJA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    1,\"724.0\",\"user2@example.com\"\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiGateBaseUrl}}/amigo-wallet/wallet-to-wallet/transfertowallet",
+							"host": [
+								"{{apiGateBaseUrl}}"
+							],
+							"path": [
+								"amigo-wallet",
+								"wallet-to-wallet",
+								"transfertowallet"
+							]
+						},
+						"description": "This returns a `token` that you can use to retrieve information later on.\n\nWe have included a test to confirm if a token is returned. We have also added test scripts to copy the token to the `token` collection variable. This makes it easy for us to reuse this token in other requests in the collection."
+					},
+					"response": []
+				},
+				{
+					"name": "WalletToMerchantTransfer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"An access token is returned\", () => {",
+									"    pm.expect(pm.response.json()).to.have.property('token')",
+									"    pm.expect(pm.response.json().token).to.be.a('string')",
+									"    // Set the collection-scope \"token\" variable to the token received from the API",
+									"    // This lets us use it in other requests",
+									"    pm.collectionVariables.set('token', pm.response.json().token)",
+									"})",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImthaWZrNDY4QGdtYWlsLmNvbSIsInN1YiI6ImthaWYgU2lkZGlxdWUiLCJpYXQiOjE3MDk0NDk3NjMsImV4cCI6MTcwOTYyOTc2M30.Y5MOfX4A9Sty2GsoGmRYBUS_w4iNvJLTBO89vZ8drJA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    1,\"724.0\",\"user2@example.com\"\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiGateBaseUrl}}/amigo-wallet/wallet-to-wallet/transfertowallet",
+							"host": [
+								"{{apiGateBaseUrl}}"
+							],
+							"path": [
+								"amigo-wallet",
+								"wallet-to-wallet",
+								"transfertowallet"
+							]
+						},
+						"description": "This returns a `token` that you can use to retrieve information later on.\n\nWe have included a test to confirm if a token is returned. We have also added test scripts to copy the token to the `token` collection variable. This makes it easy for us to reuse this token in other requests in the collection."
+					},
+					"response": []
+				},
+				{
+					"name": "getAllOffer",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get name",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"A name is returned\", () => {",
+							"    pm.expect(pm.response.json()).to.have.property('name');",
+							"    pm.expect(pm.response.json().name).to.be.a('string');",
+							"})"
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/my-name?token={{token}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"my-name"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "{{token}}"
+						}
+					]
+				},
+				"description": "This request uses the saved `token` collection variable to access a secret 'name' stored against that token.\n\nIn this request, we used the `token` collection variable as a query param to fetch the name generated for that token. We have added a test to check that a name is correctly returned."
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": ""
+		},
+		{
+			"key": "baseUrl",
+			"value": "https://postman-integration-testing.glitch.me/"
+		}
+	]
+}
